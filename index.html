@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Molecule Viewer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+	<h1>Molecule Viewer</h1>
+    <div class="left">
+        <div class="molecule-display-container">
+            <h2>Molecule Display</h2>
+            <div id="molecule-display" style="text-align: center;">
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="add-element-container">
+            <h2>Add Element</h2>
+            <form id="add-element-form" action="/add_element" method="POST">
+                <label for="element-number">Element Number:</label>
+                <input type="number" id="element-number" name="element-number" required><br><br>
+                
+                <label for="element-code">Element Code:</label>
+                <input type="text" id="element-code" name="element-code" maxlength="2" required><br><br>
+                
+                <label for="element-name">Element Name:</label>
+                <input type="text" id="element-name" name="element-name" required><br><br>
+                
+                <label for="element-color1">Element Color 1:</label>
+                <input type="color" id="element-color1" name="element-color1" value="#FFFFFF" required><br><br>
+                
+                <label for="element-color2">Element Color 2:</label>
+                <input type="color" id="element-color2" name="element-color2" value="#FFFFFF" required><br><br>
+                
+                <label for="element-color3">Element Color 3:</label>
+                <input type="color" id="element-color3" name="element-color3" value="#FFFFFF" required><br><br>
+                
+                <label for="element-radius">Element Radius:</label>
+                <input type="number" id="element-radius" name="element-radius" required><br><br>
+                
+                <button id="add-button" type="submit" value="Add Element">Add Element</button>
+                <div class="element-list-container">
+                    <h3>Element List</h3>
+                    <ul id="element-list"></ul>
+                </div>
+            </form>
+        </div>
+        <div class="remove-element-container">
+            <h2>Remove Element</h2>
+            <form id="remove_element" action="/remove_element" method="POST">
+                <label for="element-number-remove">Element Number:</label>
+                <input type="number" id="element-number-remove" name="element-number-remove" required><br><br>
+                
+                <button id="remove-button" type="submit" value="Add Element">Remove Element</button>
+            </form>
+        </div>
+    <div class="upload-sdf-container">
+        <h2>Upload SDF File</h2>
+        <form id="upload-form" action="/upload_sdf" method="POST" enctype="multipart/form-data">
+            <label for="sdf_file">Select SDF file:</label>
+            <input type="file" id="sdf_file" name="sdf_file" accept=".sdf" required><br>
+
+            <label for="mol_name">Assign a name to the molecule:</label>
+            <input type="text" id="mol_name" name="mol_name" required><br>
+
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+<!-- Error messages -->
+    <div id="error-msg" style="color: red; display: none;">
+    Invalid SDF file. Please select a valid SDF file.
+    </div>
+
+<!-- Success message -->
+    <div id="success-msg" style="color: green; display: none;">
+    SDF file uploaded successfully!
+    </div>
+    <div class="select-molecule-container">
+        <h2>Select a Molecule</h2>
+        <div class="choose-molecule-form">
+            <p>Choose a molecule from the list below:</p>
+            <select id="molecule_list">
+                <option value="" disabled selected>Select a molecule</option>
+            </select>
+            <br><br>
+            <button onclick="showMolecule()">Show Details</button>
+            <p id="details"></p>	
+        </div>
+    </div>
+</div>
+</body>
+</html>

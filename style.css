@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.left {
+    height: 100vh;
+    display: flex;
+    margin: 25px;
+}
+
+.molecule-display-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#molecule-display {
+    width: 99vw;
+    height: 672px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-element-container h2 {
+    text-align: center;
+}
+
+.add-element-container form {
+    margin: 0px 0 0 35px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.add-element-container h3 {
+    margin-top: 10px;
+}
+
+.add-element-container li {
+    list-style-type: none;
+}
+
+.remove-element-container h2 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.remove-element-container form {
+    margin: 0px 0 0 35px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.upload-sdf-container h2 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.upload-sdf-container form {
+    margin: 0px 0 0 35px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.select-molecule-container h2 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.choose-molecule-form {
+    margin: 0px 0 0 35px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
